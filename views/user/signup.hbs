@@ -1,0 +1,51 @@
+ <section>
+        <div class=" mask d-flex align-items-center h-100 gradient-custom-3">
+            <div class="container h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+                        <div class="card" style="border-radius: 15px;">
+                            <div class="card-body p-5">
+                                <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+                                <form action="/signup" method="post">
+                                    {{#if signupError}}
+                                         <div class="alert alert-danger">
+                                             <strong>{{signupError}}</strong>
+                                          </div>
+                                     {{/if}}
+                                    <div class="form-outline mb-4">
+                                        <input type="text" id="name" name="Name" onkeyup="validateName()" class="form-control form-control-lg" />
+                                        <label class="form-label" for="name">Your Name</label>
+                                        <span id="name-error"></span>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="email" id="email" name="Email" onkeyup="validateEmail()" class="form-control form-control-lg" required/>
+                                        <label class="form-label" for="email">Your Email</label>
+                                        <span id="email-error"></span>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <input type="password" id="password"
+                                           name="Password" class="form-control form-control-lg" required/>
+                                        <label class="form-label" for="password">Password</label>
+                                    </div>
+
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit"
+                                            class="btn btn-success btn-block btn-lg gradient-custom-4 text-body" id="onSubmit">Register</button>
+                                    </div>
+
+                                    <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="/login"
+                                            class="fw-bold text-body"><u>Login here</u></a></p>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="javascripts/validate.js"></script>
